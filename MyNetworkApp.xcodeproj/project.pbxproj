@@ -162,7 +162,8 @@
 				BA4EAC8F2BAB0ED100676380 /* SceneDelegate.swift */,
 				BA4EAC9B2BAB0ED100676380 /* Info.plist */,
 			);
-			path = App;
+			name = App;
+			path = MyNetworkApp/App;
 			sourceTree = "<group>";
 		};
 		BA4EACC02BAB0F4100676380 /* Resources */ = {
@@ -170,7 +171,8 @@
 			children = (
 				BA4EAC962BAB0ED100676380 /* Assets.xcassets */,
 			);
-			path = Resources;
+			name = Resources;
+			path = MyNetworkApp/Resources;
 			sourceTree = "<group>";
 		};
 		BA4EACC32BAB1A5B00676380 /* Models */ = {
@@ -179,6 +181,7 @@
 				BA4EACC12BAB1A3900676380 /* Character.swift */,
 			);
 			name = Models;
+			path = MyNetworkApp/Models;
 			sourceTree = "<group>";
 		};
 		BA4EACCC2BAB200D00676380 /* Views */ = {

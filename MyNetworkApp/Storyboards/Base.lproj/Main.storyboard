@@ -46,6 +46,18 @@
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eeg-2v-pae">
                                     <rect key="frame" x="0.0" y="0.0" width="340" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxb-Cq-EUy">
+                                            <rect key="frame" x="149" y="39.666666666666664" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Fxb-Cq-EUy" firstAttribute="centerX" secondItem="eeg-2v-pae" secondAttribute="centerX" id="rBo-EI-gCf"/>
+                                        <constraint firstItem="Fxb-Cq-EUy" firstAttribute="centerY" secondItem="eeg-2v-pae" secondAttribute="centerY" id="zLg-0g-POQ"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
