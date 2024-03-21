@@ -8,16 +8,21 @@
 import UIKit
 
 class CharacterCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var characterImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var createdLabel: UILabel!
+    @IBOutlet weak var updatedLabel: UILabel!
+    
+    func configure(with character: Character) {
+        nameLabel.text = character.name
+        createdLabel.text = character.createdAt
+        updatedLabel.text = character.updatedAt
+        DispatchQueue.global().async {
+            guard let url = URL(string: character.imageURL ?? "") else { return }
+            guard let imageData = try? Data(contentsOf: url) else { return }
+            DispatchQueue.main.async {
+                self.characterImageView.image = UIImage(data: imageData)
+            }
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

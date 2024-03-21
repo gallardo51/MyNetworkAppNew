@@ -29,16 +29,7 @@ class MainViewController: UICollectionViewController {
         
         // Do any additional setup after loading the view.
     }
-    
-    /*
-     // MARK: - Navigation
      
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using [segue destinationViewController].
-     // Pass the selected object to the new view controller.
-     }
-     */
     
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -63,17 +54,69 @@ class MainViewController: UICollectionViewController {
         }
     }
     
-}
-
-// MARK: Networking
-//extension MainViewController {
-//    private func downloadImageButtonPressed() {
-//        guard let url = URL(string: Link.imageURL.rawValue)
-//    }
-//}
-
-extension MainViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: UIScreen.main.bounds.width - 45, height: 100)
+    // MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showCharacters" {
+            guard let charactersVC = segue.destination as? CharacterViewController else { return }
+            charactersVC.fetchCharacters()
+        }
+    }
+    
+    // MARK: Private Methods
+    private func successAlert() {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(
+                title: "Success",
+                message: "You can see the results in the Debug aria",
+                preferredStyle: .alert
+            )
+            
+            let okAction = UIAlertAction(title: "Ok", style: .default)
+            alert.addAction(okAction)
+            self.present(alert, animated: true)
+        }
+    }
+    
+    private func failedAlert() {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(
+                title: "Failed",
+                message: "You can see error in the Debug aria",
+                preferredStyle: .alert
+            )
+            
+            let okAction = UIAlertAction(title: "Ok", style: .default)
+            alert.addAction(okAction)
+            self.present(alert, animated: true)
+        }
     }
 }
+
+    // MARK: Networking
+//extension MainViewController {
+//    private func charactersButtonPressed() {
+//        guard let url = URL(string: Link.charactersURL.rawValue) else { return }
+//        
+//        URLSession.shared.dataTask(with: url) { data, _, error in
+//            guard let data = data else {
+//                print(error?.localizedDescription ?? "No error description")
+//                return
+//            }
+//            
+//            do {
+//                let websiteDescription = try JSONDecoder().decode(WebsiteDescription.self, from: data)
+//                print(websiteDescription)
+//                self.successAlert()
+//            } catch let error {
+//                print(error)
+//                self.failedAlert()
+//            }
+//        }.resume()
+//    }
+//}
+    
+    extension MainViewController: UICollectionViewDelegateFlowLayout {
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            CGSize(width: UIScreen.main.bounds.width - 45, height: 100)
+        }
+    }
