@@ -16,14 +16,30 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cAq-fW-wpw">
+                                <rect key="frame" x="0.0" y="111" width="393" height="741"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="wll-zm-6bK">
+                                <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cAq-fW-wpw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="H2i-MR-hJy"/>
+                            <constraint firstItem="cAq-fW-wpw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="Yn4-Wv-HHW"/>
+                            <constraint firstItem="cAq-fW-wpw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="b8n-S8-LaG"/>
+                            <constraint firstItem="wll-zm-6bK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rkl-C3-XBm"/>
+                            <constraint firstItem="wll-zm-6bK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ya3-TZ-fxp"/>
+                            <constraint firstAttribute="bottom" secondItem="cAq-fW-wpw" secondAttribute="bottom" id="yjc-mh-T5S"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PUQ-xs-07i"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2927" y="-402"/>
+            <point key="canvasLocation" x="2925.9541984732823" y="-402.11267605633805"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="jxp-xa-IVi">
@@ -40,7 +56,7 @@
                             <inset key="sectionInset" minX="0.0" minY="40" maxX="0.0" maxY="40"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="DEY-v8-ad3">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="DEY-v8-ad3" customClass="CollectionCell" customModule="MyNetworkApp" customModuleProvider="target">
                                 <rect key="frame" x="26.666666666666668" y="40" width="340" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eeg-2v-pae">
@@ -50,7 +66,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxb-Cq-EUy">
                                             <rect key="frame" x="149" y="39.666666666666664" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -59,12 +75,15 @@
                                         <constraint firstItem="Fxb-Cq-EUy" firstAttribute="centerY" secondItem="eeg-2v-pae" secondAttribute="centerY" id="zLg-0g-POQ"/>
                                     </constraints>
                                 </collectionViewCellContentView>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="userActionLabel" destination="Fxb-Cq-EUy" id="9Qr-Ze-aTN"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -75,7 +94,7 @@
                     <navigationItem key="navigationItem" id="zyd-Bd-HJ7"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="showImage" id="Y2u-KL-YHA"/>
-                        <segue destination="dAU-2T-d56" kind="show" identifier="showTable" id="czK-TI-e5s"/>
+                        <segue destination="dAU-2T-d56" kind="show" identifier="showCharacters" id="czK-TI-e5s"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Edr-vk-Phl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -91,7 +110,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" id="xrG-hx-FoN">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell2" id="xrG-hx-FoN" customClass="CharacterCell" customModule="MyNetworkApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xrG-hx-FoN" id="hhR-TO-wx1">
@@ -133,6 +152,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

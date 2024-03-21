@@ -25,4 +25,7 @@ struct WebsiteDescription: Decodable {
     let nextPage: String?
 }
 
-let link = "https://api.disneyapi.dev/character"
+enum Link: String {
+    case imageURL = "https://img3.akspic.ru/attachments/crops/6/8/0/6/6/166086/166086-ios_15_official_stock_wallpaper_original_quality_wwdc21_light-1440x2560.jpg"
+    case charactersURL = "https://api.disneyapi.dev/character"
+}

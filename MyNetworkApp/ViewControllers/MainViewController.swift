@@ -9,8 +9,14 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
+enum UserActions: String, CaseIterable {
+    case downloadImage = "Download Image"
+    case characters = "Characters"
+}
+
 class MainViewController: UICollectionViewController {
     
+    let userActions = UserActions.allCases
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,13 +43,13 @@ class MainViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        2
+        userActions.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionCell
     
-        // Configure the cell
+        cell.userActionLabel.text = userActions[indexPath.item].rawValue
     
         return cell
     }
