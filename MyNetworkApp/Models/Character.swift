@@ -26,6 +26,6 @@ struct WebsiteDescription: Decodable {
 }
 
 enum Link: String {
-    case imageURL = "https://img3.akspic.ru/attachments/crops/6/8/0/6/6/166086/166086-ios_15_official_stock_wallpaper_original_quality_wwdc21_light-1440x2560.jpg"
+    case imageURL = "https://img2.akspic.ru/attachments/crops/0/4/5/6/6/166540/166540-ios_15-yabloko-ios-ios_14-sklon-1080x1920.jpg"
     case charactersURL = "https://api.disneyapi.dev/character"
 }
