@@ -22,6 +22,7 @@
 		BA4EACC92BAB1FBE00676380 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EACC82BAB1FBE00676380 /* CollectionCell.swift */; };
 		BA4EACCB2BAB1FE600676380 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EACCA2BAB1FE600676380 /* CharacterCell.swift */; };
 		BA9055512BAD57730023C34A /* CharacterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9055502BAD57730023C34A /* CharacterInfoViewController.swift */; };
+		BA9055532BAD633D0023C34A /* Network Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9055522BAD633D0023C34A /* Network Manager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		BA4EACC82BAB1FBE00676380 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		BA4EACCA2BAB1FE600676380 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		BA9055502BAD57730023C34A /* CharacterInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoViewController.swift; sourceTree = "<group>"; };
+		BA9055522BAD633D0023C34A /* Network Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network Manager.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				BA4EAC8C2BAB0ED100676380 /* MyNetworkApp */,
 				BA4EACC32BAB1A5B00676380 /* Models */,
+				BA9055542BAD63420023C34A /* Services */,
 				BA4EACC02BAB0F4100676380 /* Resources */,
 				BA4EACBF2BAB0F3A00676380 /* App */,
 				BA4EACA32BAB0ED200676380 /* MyNetworkAppTests */,
@@ -194,6 +197,14 @@
 				BA4EACCA2BAB1FE600676380 /* CharacterCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BA9055542BAD63420023C34A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BA9055522BAD633D0023C34A /* Network Manager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA4EACC72BAB1F5200676380 /* CharacterViewController.swift in Sources */,
+				BA9055532BAD633D0023C34A /* Network Manager.swift in Sources */,
 				BA9055512BAD57730023C34A /* CharacterInfoViewController.swift in Sources */,
 				BA4EAC922BAB0ED100676380 /* ImageViewController.swift in Sources */,
 				BA4EAC8E2BAB0ED100676380 /* AppDelegate.swift in Sources */,
