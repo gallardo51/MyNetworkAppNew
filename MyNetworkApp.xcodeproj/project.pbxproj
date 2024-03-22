@@ -21,6 +21,7 @@
 		BA4EACC72BAB1F5200676380 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EACC62BAB1F5200676380 /* CharacterViewController.swift */; };
 		BA4EACC92BAB1FBE00676380 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EACC82BAB1FBE00676380 /* CollectionCell.swift */; };
 		BA4EACCB2BAB1FE600676380 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EACCA2BAB1FE600676380 /* CharacterCell.swift */; };
+		BA9055512BAD57730023C34A /* CharacterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9055502BAD57730023C34A /* CharacterInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		BA4EACC62BAB1F5200676380 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		BA4EACC82BAB1FBE00676380 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		BA4EACCA2BAB1FE600676380 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		BA9055502BAD57730023C34A /* CharacterInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				BA4EACC42BAB1F0500676380 /* MainViewController.swift */,
 				BA4EAC912BAB0ED100676380 /* ImageViewController.swift */,
 				BA4EACC62BAB1F5200676380 /* CharacterViewController.swift */,
+				BA9055502BAD57730023C34A /* CharacterInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA4EACC72BAB1F5200676380 /* CharacterViewController.swift in Sources */,
+				BA9055512BAD57730023C34A /* CharacterInfoViewController.swift in Sources */,
 				BA4EAC922BAB0ED100676380 /* ImageViewController.swift in Sources */,
 				BA4EAC8E2BAB0ED100676380 /* AppDelegate.swift in Sources */,
 				BA4EACCB2BAB1FE600676380 /* CharacterCell.swift in Sources */,

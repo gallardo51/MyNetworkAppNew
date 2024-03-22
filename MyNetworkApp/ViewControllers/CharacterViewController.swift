@@ -67,15 +67,14 @@ class CharacterViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let detailsVC = segue.destination as? CharacterInfoViewController else { return }
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        let character = characters?.data?[indexPath.row]
+        detailsVC.character = character
     }
-    */
 
 }
 

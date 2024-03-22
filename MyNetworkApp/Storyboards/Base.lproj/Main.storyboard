@@ -166,6 +166,7 @@
                                     <outlet property="createdLabel" destination="2dz-kD-NgY" id="I6U-hO-dDl"/>
                                     <outlet property="nameLabel" destination="gK1-Lv-qzd" id="wdE-y2-fwu"/>
                                     <outlet property="updatedLabel" destination="Ic2-Wg-XvA" id="Eum-nz-Rm1"/>
+                                    <segue destination="U9d-Qe-hBc" kind="show" id="0YT-LJ-VDH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -179,6 +180,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cal-Yr-K8G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2927.4809160305344" y="305.63380281690144"/>
+        </scene>
+        <!--Character Info View Controller-->
+        <scene sceneID="kXe-YN-RQT">
+            <objects>
+                <viewController id="U9d-Qe-hBc" customClass="CharacterInfoViewController" customModule="MyNetworkApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T9A-1w-3he">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UH3-W3-vyn">
+                                <rect key="frame" x="95" y="103" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Yoc-TP-fTx"/>
+                                    <constraint firstAttribute="height" constant="200" id="wtP-BU-gS8"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QSo-45-lMZ">
+                                <rect key="frame" x="20" y="323" width="353" height="60.666666666666686"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4w-IV-9si">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abC-sP-VaS">
+                                        <rect key="frame" x="0.0" y="40.333333333333314" width="353" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CXJ-Hk-8vw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UH3-W3-vyn" firstAttribute="top" secondItem="CXJ-Hk-8vw" secondAttribute="top" id="ETG-Lc-2DW"/>
+                            <constraint firstItem="QSo-45-lMZ" firstAttribute="leading" secondItem="CXJ-Hk-8vw" secondAttribute="leading" constant="20" id="F7M-5s-EQ6"/>
+                            <constraint firstItem="UH3-W3-vyn" firstAttribute="leading" secondItem="CXJ-Hk-8vw" secondAttribute="leading" constant="95" id="Z8M-09-w2J"/>
+                            <constraint firstItem="CXJ-Hk-8vw" firstAttribute="trailing" secondItem="QSo-45-lMZ" secondAttribute="trailing" constant="20" id="edc-ff-IJ1"/>
+                            <constraint firstItem="QSo-45-lMZ" firstAttribute="top" secondItem="UH3-W3-vyn" secondAttribute="bottom" constant="20" id="qsz-5d-dwH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gWx-ig-utx"/>
+                    <connections>
+                        <outlet property="characterImage" destination="UH3-W3-vyn" id="PWw-AJ-rmp"/>
+                        <outlet property="nameLabel" destination="k4w-IV-9si" id="W03-Ys-EgR"/>
+                        <outlet property="urlLabel" destination="abC-sP-VaS" id="sI8-KG-hKS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Al3-7V-UjA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3783.969465648855" y="305.63380281690144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rwG-Rq-KCK">
