@@ -17,13 +17,13 @@ class CharacterInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        guard let url = URL(string: character.imageUrl ?? "") else { return }
-        guard let imageData = try? Data(contentsOf: url) else { return }
-        DispatchQueue.main.async {
-            self.characterImage.image = UIImage(data: imageData)
-        }
         nameLabel.text = character.name
         urlLabel.text = character.sourceUrl
+        DispatchQueue.global().async {
+            guard let imageData = ImageManager.shared.fetchImage(from: self.character.imageUrl) else { return }
+            DispatchQueue.main.async {
+                self.characterImage.image = UIImage(data: imageData)
+            }
+        }
     }
 }
