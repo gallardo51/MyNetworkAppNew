@@ -23,6 +23,8 @@
 		BA4EACCB2BAB1FE600676380 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EACCA2BAB1FE600676380 /* CharacterCell.swift */; };
 		BA9055512BAD57730023C34A /* CharacterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9055502BAD57730023C34A /* CharacterInfoViewController.swift */; };
 		BA9055532BAD633D0023C34A /* Network Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9055522BAD633D0023C34A /* Network Manager.swift */; };
+		BAE69B352BAEF42D00455F8D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BAE69B342BAEF42D00455F8D /* Alamofire */; };
+		BAE69B372BAEF42D00455F8D /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = BAE69B362BAEF42D00455F8D /* AlamofireDynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAE69B352BAEF42D00455F8D /* Alamofire in Frameworks */,
+				BAE69B372BAEF42D00455F8D /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +227,10 @@
 			dependencies = (
 			);
 			name = MyNetworkApp;
+			packageProductDependencies = (
+				BAE69B342BAEF42D00455F8D /* Alamofire */,
+				BAE69B362BAEF42D00455F8D /* AlamofireDynamic */,
+			);
 			productName = MyNetworkApp;
 			productReference = BA4EAC8A2BAB0ED100676380 /* MyNetworkApp.app */;
 			productType = "com.apple.product-type.application";
@@ -708,6 +716,19 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BAE69B342BAEF42D00455F8D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BAE69B332BAEE64800455F8D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		BAE69B362BAEF42D00455F8D /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BAE69B332BAEE64800455F8D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BA4EAC822BAB0ED000676380 /* Project object */;
 }

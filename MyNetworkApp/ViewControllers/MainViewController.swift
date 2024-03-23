@@ -14,7 +14,7 @@ enum UserActions: String, CaseIterable {
 
 class MainViewController: UICollectionViewController {
     
-    private var characters: WebsiteDescription?
+    private var characters: [WebsiteDescription] = []
     
     let userActions = UserActions.allCases
     
@@ -57,7 +57,7 @@ class MainViewController: UICollectionViewController {
     }
     
     private func fetchCharacter(from url: String?) {
-        NetworkManager.shared.fetchData(from: url) { characters in
+        NetworkManager.shared.fetchData { characters in
             self.characters = characters
         }
     }
