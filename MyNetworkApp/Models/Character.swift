@@ -8,6 +8,44 @@
 struct WebsiteDescription: Decodable {
     let info: Info
     let data: [Character]?
+    
+    init(value: [String: Any]) {
+        
+        let info = value["info"] as? [String: Any] ?? [:]
+        let infoDictValue = Info(count: info["count"] as? Int,
+                                 totalPages: info["totalPages"] as? Int,
+                                 previousPage: info["previousPage"] as? String,
+                                 nextPage: info["nextPage"] as? String
+        )
+        
+        let data = value["data"] as? [String: Any] ?? [:]
+        let dataDictValue = [Character(_id: data["_id"] as? Int,
+                                       films: data["films"] as? [String],
+                                       shortFilms: data["shortFilms"] as? [String],
+                                       tvShows: data["tvShows"] as? [String],
+                                       videoGames: data["videoGames"] as? [String],
+                                       parkAttractions: data["parkAttractions"] as? [String],
+                                       allies: data["allies"] as? [String],
+                                       enemies: data["enemies"] as? [String],
+                                       sourceUrl: data["sourceUrl"] as? String,
+                                       name: data["sname"] as? String,
+                                       imageUrl: data["imageUrl"] as? String,
+                                       createdAt: data["createdAt"] as? String,
+                                       updatedAt: data["updatedAt"] as? String,
+                                       url: data["url"] as? String,
+                                       __v: data["__v"] as? Int
+                                      )]
+        
+        self.info = infoDictValue
+        self.data = dataDictValue
+        
+    }
+    
+    static func getCharacter(from value: Any) -> [WebsiteDescription]? {
+        guard let arrayOfCharacters = value as? [[String: Any]] else { return nil }
+        return arrayOfCharacters.compactMap { WebsiteDescription(value: $0)
+        }
+    }
 }
 
 struct Info: Decodable {
