@@ -58,14 +58,14 @@ class NetworkManager {
 //    }
 //}
 //
-//class ImageManager {
-//    static var shared = ImageManager()
-//    
-//    private init() {}
-//    
-//    func fetchImage(from url: String?) -> Data? {
-//        guard let stringURL = url else { return nil }
-//        guard let imageURL = URL(string: stringURL) else { return nil }
-//        return try? Data(contentsOf: imageURL)
-//    }
-//}
+class ImageManager {
+    static var shared = ImageManager()
+    
+    private init() {}
+    
+    func fetchImage(from url: String?) -> Data? {
+        guard let stringURL = url else { return nil }
+        guard let imageURL = URL(string: stringURL) else { return nil }
+        return try? Data(contentsOf: imageURL)
+    }
+}

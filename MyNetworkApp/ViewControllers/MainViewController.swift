@@ -52,7 +52,7 @@ class MainViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showCharacters" {
             guard let charactersVC = segue.destination as? CharacterViewController else { return }
-            charactersVC.characters = characters
+            charactersVC.characters =
         }
     }
     
