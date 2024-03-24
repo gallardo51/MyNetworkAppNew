@@ -21,7 +21,7 @@ class MainViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchCharacter(from: Link.charactersURL.rawValue)
+        fetchCharacter()
     }
     
     
@@ -52,13 +52,18 @@ class MainViewController: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showCharacters" {
             guard let charactersVC = segue.destination as? CharacterViewController else { return }
-            charactersVC.characters =
+            charactersVC.characters = characters
         }
     }
     
-    private func fetchCharacter(from url: String?) {
-        NetworkManager.shared.fetchData { characters in
-            self.characters = characters
+    private func fetchCharacter() {
+        NetworkManager.shared.fetchData(Link.charactersURL.rawValue) { result in
+            switch result {
+            case .success(let characters):
+                self.characters = characters
+            case .failure(let error):
+                print(error)
+            }
         }
     }
 }

@@ -9,7 +9,7 @@ import UIKit
 
 class CharacterViewController: UITableViewController {
     
-    var characters: WebsiteDescription?
+    var characters: [WebsiteDescription]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +19,7 @@ class CharacterViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        characters?.data?.count ?? 0
+        characters.data?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

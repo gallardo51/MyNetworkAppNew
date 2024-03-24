@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-enum NetworkError {
+enum NetworkError: Error {
     case invalidURL
     case noData
     case decodingError
@@ -19,7 +19,7 @@ class NetworkManager {
     
     private init() {}
     
-    func fetchData(_ completion: @escaping([WebsiteDescription]) -> Void) {
+    func fetchData(_ url: String, completion: @escaping(Result<[WebsiteDescription], NetworkError>) -> Void) {
         AF.request(Link.charactersURL.rawValue)
             .validate()
             .responseJSON { dataResponse in
@@ -27,7 +27,7 @@ class NetworkManager {
             case .success(let value):
                 guard let results = WebsiteDescription.getCharacter(from: value) else { return }
                 DispatchQueue.main.async {
-                    completion(results)
+                    completion(.success(results))
                 }
             case .failure(let error):
                 print(error)
