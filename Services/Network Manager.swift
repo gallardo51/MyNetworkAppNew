@@ -23,41 +23,19 @@ class NetworkManager {
         AF.request(Link.charactersURL.rawValue)
             .validate()
             .responseJSON { dataResponse in
-            switch dataResponse.result {
-            case .success(let value):
-                guard let results = WebsiteDescription.getCharacters(from: value) else { return }
-                DispatchQueue.main.async {
-                    completion(.success(results))
+                switch dataResponse.result {
+                case .success(let value):
+                    guard let results = WebsiteDescription.getCharacters(from: value) else { return }
+                    DispatchQueue.main.async {
+                        completion(.success(results))
+                    }
+                case .failure(let error):
+                    print(error)
                 }
-            case .failure(let error):
-                print(error)
             }
-        }
     }
 }
-    
-//    func fetchData(from url: String?, with completion: @escaping(WebsiteDescription) -> Void) {
-//        guard let stringURL = url else { return }
-//        guard let url = URL(string: stringURL) else { return }
-//        
-//        URLSession.shared.dataTask(with: url) { data, _, error in
-//            guard let data = data else {
-//                print(error?.localizedDescription ?? "No error description")
-//                return
-//            }
-//            
-//            do {
-//                let characters = try JSONDecoder().decode(WebsiteDescription.self, from: data)
-//                DispatchQueue.main.async {
-//                   completion(characters)
-//                }
-//            } catch let error {
-//                print(error)
-//            }
-//        }.resume()
-//    }
-//}
-//
+
 class ImageManager {
     static var shared = ImageManager()
     

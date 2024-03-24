@@ -71,9 +71,9 @@ struct Character: Decodable {
         __v = value["__v"] as? Int
     }
     
-        static func getHero(from arrayOfItems: Any) -> [Character]? {
-            guard let value = arrayOfItems as? [[String: Any]] else { return nil }
-            return value.compactMap { Character(value: $0) }
+    static func getHero(from arrayOfItems: Any) -> [Character]? {
+        guard let value = arrayOfItems as? [[String: Any]] else { return nil }
+        return value.compactMap { Character(value: $0) }
         
     }
 }
