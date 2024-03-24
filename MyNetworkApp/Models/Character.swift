@@ -6,42 +6,24 @@
 //
 
 struct WebsiteDescription: Decodable {
-    let info: Info
+    let info: Info?
     let data: [Character]?
     
     init(value: [String: Any]) {
-        
-        let info = value["info"] as? [String: Any] ?? [:]
-        let infoDictValue = Info(count: info["count"] as? Int,
-                                 totalPages: info["totalPages"] as? Int,
-                                 previousPage: info["previousPage"] as? String,
-                                 nextPage: info["nextPage"] as? String
+        let infoDict = value["info"] as? [String: Any] ?? [:]
+        let info = Info(count: infoDict["count"] as? Int,
+                        totalPages:  infoDict["totalPages"] as? Int,
+                        previousPage:  infoDict["previousPage"] as? String,
+                        nextPage:  infoDict["nextPage"] as? String
         )
+        let dataDict = value["data"] as? [[String: Any]] ?? [[:]]
+        let data = Character.getHero(from: dataDict)
         
-        let data = value["data"] as? [String: Any] ?? [:]
-        let dataDictValue = [Character(_id: data["_id"] as? Int,
-                                       films: data["films"] as? [String],
-                                       shortFilms: data["shortFilms"] as? [String],
-                                       tvShows: data["tvShows"] as? [String],
-                                       videoGames: data["videoGames"] as? [String],
-                                       parkAttractions: data["parkAttractions"] as? [String],
-                                       allies: data["allies"] as? [String],
-                                       enemies: data["enemies"] as? [String],
-                                       sourceUrl: data["sourceUrl"] as? String,
-                                       name: data["sname"] as? String,
-                                       imageUrl: data["imageUrl"] as? String,
-                                       createdAt: data["createdAt"] as? String,
-                                       updatedAt: data["updatedAt"] as? String,
-                                       url: data["url"] as? String,
-                                       __v: data["__v"] as? Int
-                                      )]
-        
-        self.info = infoDictValue
-        self.data = dataDictValue
-        
+        self.info = info
+        self.data = data
     }
     
-    static func getCharacter(from value: Any) -> WebsiteDescription? {
+    static func  getCharacters(from value: Any) -> WebsiteDescription? {
         guard let value = value as? [String: Any] else { return nil }
         return WebsiteDescription(value: value)
     }
@@ -70,6 +52,30 @@ struct Character: Decodable {
     let updatedAt: String?
     let url: String?
     let __v: Int?
+    
+    init(value: [String: Any]) {
+        _id = value["_id"] as? Int
+        films = value["films"] as? [String]
+        shortFilms = value["shortFilms"] as? [String]
+        tvShows = value["tvShows"] as? [String]
+        videoGames = value["videoGames"] as? [String]
+        parkAttractions = value["parkAttractions"] as? [String]
+        allies = value["allies"] as? [String]
+        enemies = value["enemies"] as? [String]
+        sourceUrl = value["sourceUrl"] as? String
+        name = value["name"] as? String
+        imageUrl = value["imageUrl"] as? String
+        createdAt = value["createdAt"] as? String
+        updatedAt = value["updatedAt"] as? String
+        url = value["url"] as? String
+        __v = value["__v"] as? Int
+    }
+    
+        static func getHero(from arrayOfItems: Any) -> [Character]? {
+            guard let value = arrayOfItems as? [[String: Any]] else { return nil }
+            return value.compactMap { Character(value: $0) }
+        
+    }
 }
 
 enum Link: String {

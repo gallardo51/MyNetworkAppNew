@@ -25,7 +25,7 @@ class NetworkManager {
             .responseJSON { dataResponse in
             switch dataResponse.result {
             case .success(let value):
-                guard let results = WebsiteDescription.getCharacter(from: value) else { return }
+                guard let results = WebsiteDescription.getCharacters(from: value) else { return }
                 DispatchQueue.main.async {
                     completion(.success(results))
                 }
