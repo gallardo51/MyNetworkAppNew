@@ -41,10 +41,9 @@ struct WebsiteDescription: Decodable {
         
     }
     
-    static func getCharacter(from value: Any) -> [WebsiteDescription]? {
-        guard let arrayOfCharacters = value as? [[String: Any]] else { return nil }
-        return arrayOfCharacters.compactMap { WebsiteDescription(value: $0)
-        }
+    static func getCharacter(from value: Any) -> WebsiteDescription? {
+        guard let value = value as? [String: Any] else { return nil }
+        return WebsiteDescription(value: value)
     }
 }
 

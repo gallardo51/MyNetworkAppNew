@@ -14,7 +14,7 @@ enum UserActions: String, CaseIterable {
 
 class MainViewController: UICollectionViewController {
     
-    private var characters: [WebsiteDescription] = []
+    private var characters: WebsiteDescription?
     
     let userActions = UserActions.allCases
     

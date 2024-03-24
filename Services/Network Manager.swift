@@ -19,7 +19,7 @@ class NetworkManager {
     
     private init() {}
     
-    func fetchData(_ url: String, completion: @escaping(Result<[WebsiteDescription], NetworkError>) -> Void) {
+    func fetchData(_ url: String, completion: @escaping(Result<WebsiteDescription, NetworkError>) -> Void) {
         AF.request(Link.charactersURL.rawValue)
             .validate()
             .responseJSON { dataResponse in
