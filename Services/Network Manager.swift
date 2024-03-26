@@ -22,7 +22,7 @@ class NetworkManager {
     func fetchData(_ url: String, completion: @escaping(Result<WebsiteDescription, NetworkError>) -> Void) {
         AF.request(Link.charactersURL.rawValue)
             .validate()
-            .responseDecodable(of: WebsiteDescription.self) { dataResponse in
+            .responseJSON { dataResponse in
                 switch dataResponse.result {
                 case .success(let value):
                     guard let results = WebsiteDescription.getCharacters(from: value) else { return }
@@ -41,9 +41,16 @@ class ImageManager {
     
     private init() {}
     
-    func fetchImage(from url: String?) -> Data? {
-        guard let stringURL = url else { return nil }
-        guard let imageURL = URL(string: stringURL) else { return nil }
-        return try? Data(contentsOf: imageURL)
+    func fetchImage(from url: URL, completion: @escaping(Data, URLResponse) -> Void) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, let response = response else {
+                print(error?.localizedDescription ?? "No error description")
+                return
+            }
+            guard url == response.url else { return }
+            DispatchQueue.main.async {
+                completion(data, response)
+            }
+        }
     }
 }

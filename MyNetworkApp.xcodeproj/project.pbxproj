@@ -21,6 +21,7 @@
 		BA4EACC72BAB1F5200676380 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EACC62BAB1F5200676380 /* CharacterViewController.swift */; };
 		BA4EACC92BAB1FBE00676380 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EACC82BAB1FBE00676380 /* CollectionCell.swift */; };
 		BA4EACCB2BAB1FE600676380 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EACCA2BAB1FE600676380 /* CharacterCell.swift */; };
+		BA5A48552BB2FF9100D91F18 /* CharacterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5A48542BB2FF9100D91F18 /* CharacterImageView.swift */; };
 		BA9055512BAD57730023C34A /* CharacterInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9055502BAD57730023C34A /* CharacterInfoViewController.swift */; };
 		BA9055532BAD633D0023C34A /* Network Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9055522BAD633D0023C34A /* Network Manager.swift */; };
 		BAE69B352BAEF42D00455F8D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = BAE69B342BAEF42D00455F8D /* Alamofire */; };
@@ -63,6 +64,7 @@
 		BA4EACC62BAB1F5200676380 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		BA4EACC82BAB1FBE00676380 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		BA4EACCA2BAB1FE600676380 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		BA5A48542BB2FF9100D91F18 /* CharacterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterImageView.swift; sourceTree = "<group>"; };
 		BA9055502BAD57730023C34A /* CharacterInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfoViewController.swift; sourceTree = "<group>"; };
 		BA9055522BAD633D0023C34A /* Network Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network Manager.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -199,6 +201,7 @@
 			children = (
 				BA4EACC82BAB1FBE00676380 /* CollectionCell.swift */,
 				BA4EACCA2BAB1FE600676380 /* CharacterCell.swift */,
+				BA5A48542BB2FF9100D91F18 /* CharacterImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				BA9055532BAD633D0023C34A /* Network Manager.swift in Sources */,
 				BA9055512BAD57730023C34A /* CharacterInfoViewController.swift in Sources */,
 				BA4EAC922BAB0ED100676380 /* ImageViewController.swift in Sources */,
+				BA5A48552BB2FF9100D91F18 /* CharacterImageView.swift in Sources */,
 				BA4EAC8E2BAB0ED100676380 /* AppDelegate.swift in Sources */,
 				BA4EACCB2BAB1FE600676380 /* CharacterCell.swift in Sources */,
 				BA4EACC92BAB1FBE00676380 /* CollectionCell.swift in Sources */,
