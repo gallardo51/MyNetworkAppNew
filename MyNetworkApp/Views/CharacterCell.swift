@@ -22,6 +22,8 @@ class CharacterCell: UITableViewCell {
     
     func configure(with character: Character) {
         nameLabel.text = character.name
+        createdLabel.text = character.createdAt
+        updatedLabel.text = character.updatedAt
         characterImageView.fetchImage(from: character.imageUrl ?? "")
     }
 }
