@@ -22,7 +22,7 @@ class NetworkManager {
     func fetchData(_ url: String, completion: @escaping(Result<WebsiteDescription, NetworkError>) -> Void) {
         AF.request(Link.charactersURL.rawValue)
             .validate()
-            .responseJSON { dataResponse in
+            .responseDecodable(of: WebsiteDescription.self) { dataResponse in
                 switch dataResponse.result {
                 case .success(let value):
                     guard let results = WebsiteDescription.getCharacters(from: value) else { return }
