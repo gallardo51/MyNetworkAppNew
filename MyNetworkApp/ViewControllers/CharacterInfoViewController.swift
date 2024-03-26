@@ -11,7 +11,7 @@ class CharacterInfoViewController: UIViewController {
     
     var character: Character!
     
-    @IBOutlet weak var characterImage: UIImageView!
+    @IBOutlet weak var characterImage: CharacterImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var urlLabel: UILabel!
     
@@ -19,11 +19,6 @@ class CharacterInfoViewController: UIViewController {
         super.viewDidLoad()
         nameLabel.text = character.name
         urlLabel.text = character.sourceUrl
-        DispatchQueue.global().async {
-            guard let imageData = ImageManager.shared.fetchImage(from: self.character.imageUrl) else { return }
-            DispatchQueue.main.async {
-                self.characterImage.image = UIImage(data: imageData)
-            }
-        }
+        characterImage.fetchImage(from: character.imageUrl ?? "")
     }
 }
